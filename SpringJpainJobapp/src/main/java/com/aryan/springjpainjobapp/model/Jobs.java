@@ -62,4 +62,13 @@ public class Jobs {
                 ", salary=" + salary +
                 '}';
     }
+
+    public Jobs( String jobRole, String jobDesc, int salary) {
+
+        this.jobRole = jobRole;
+        this.jobDesc = jobDesc;
+        this.salary = salary;
+    }
+
+    public Jobs() {}
 }

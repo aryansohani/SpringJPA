@@ -5,6 +5,8 @@ import com.aryan.springjpainjobapp.repository.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -45,4 +47,19 @@ public class Jobservice {
     }
 
 
+    public void loaddata() {
+
+        List<Jobs> jobList = Arrays.asList(
+                new Jobs("Java Dev", "Spring Boot", 50000),
+                new Jobs("Frontend Dev", "React", 40000),
+                new Jobs("Data Analyst", "SQL + Python", 45000)
+        );
+        repo.saveAll(jobList);
+
+    }
+
+    public List<Jobs> searchbykeyword(String keyword)
+    {
+        return repo.search(keyword);
+    }
 }

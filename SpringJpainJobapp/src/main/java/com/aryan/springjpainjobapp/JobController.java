@@ -48,4 +48,17 @@ public class JobController {
     {
         return service.getsingleelement(jobid);
     }
+
+    @GetMapping("Load")
+    public void loaddata()
+    {
+        service.loaddata();
+    }
+
+    @GetMapping("Keyword/{keyword}")
+    public List<Jobs> searchbykeyword(@PathVariable("keyword")String keyword)
+    {
+        return service.searchbykeyword(keyword);
+    }
+
 }
